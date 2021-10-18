@@ -28,18 +28,19 @@ void Ex3(int in_arr[], int n){
 		}
 	}	
 	// find largest number of elements that decrease
-	for (i=0; i<n; i++) {
+	for (i=0; i<n-1; i++) {
 		countde = 1;
-		for (j=i+1; j<n; j++) {
+		for (j=i+1; j<=n-1; j++) {
 			if (in_arr[j-1]>in_arr[j])
 				countde++;
 			else {
-				if (compde<countde)
-					compde = countde;
 				break;
 			}
+			if (compde<countde)
+					compde = countde;
 		}
 	}	
+
 	// check increase array and print them
 	for (i=0; i<n-compin; i++) {
 		int check = 1;
@@ -56,9 +57,9 @@ void Ex3(int in_arr[], int n){
 		}
 	}
 	// check for decrease array and print them
-	for (i=0; i<n-compde; i++) {
+	for (i=0; i<=n-compde; i++) {
 		int check = 1;
-		for (j=i+1; j<i+compde; j++) 
+		for (j=i+1; j<=i+compde-1; j++) 
 			if (in_arr[j-1]<in_arr[j]) {
 				check = 0;
 				break;
