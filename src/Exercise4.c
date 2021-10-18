@@ -15,13 +15,20 @@ ______________________________________
 int Ex4(int arr[], int n){
 	//Your codes here
 	int check = 0;
-	for (int i=0; i<=n-2; i++) {
+	for (int i=0; i<=n-1; i++) {
 		if (arr[i]<arr[i+1])
 			check = 1;
-		else if (arr[i]>arr[i+1])
-			check = -1;
-		else
+		else {
 			check = 0;
+			break;
+		}
+	for (int i=0; i<=n-1; i++) {
+		if (arr[i]>arr[i+1])
+			check = -1;
+		else 
+			check = 0;
+			break;
+	}
 	}
 	return check;
 }
